@@ -1,0 +1,43 @@
+﻿@page "/productos";
+<div class="row">
+    <div class="col">
+        <h3>Productos</h3>
+    </div>
+    <div class="col-2">
+        <button class="btn btn-outline-success">
+            <i class="oi oi-plus"></i>
+        </button>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Unidades</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="col">Habichuela</td>
+            <td class="col-2">$25</td>
+            <td class="col-2">5lb</td>
+            <td>
+                <div class="btn-group">
+                    <button class="btn btn-outline-warning">
+                        <i class="oi oi-pencil"></i>
+                    </button>
+                    <button class="btn btn-outline-danger">
+                        <i class="oi oi-trash"></i>
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+@code {
+
+}
