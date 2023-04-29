@@ -18,27 +18,41 @@
             <th>Producto</th>
             <th>Precio</th>
             <th>Unidades</th>
+            <th>SubTotal</th>
             <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td class="col">Habichuela</td>
-            <td class="col-2">$25</td>
-            <td class="col-2">5lb</td>
-            <td>
-                <div class="btn-group">
-                    <button class="btn btn-outline-warning">
-                        <i class="oi oi-pencil"></i>
-                    </button>
-                    <button class="btn btn-outline-danger">
-                        <i class="oi oi-trash"></i>
-                    </button>
-                </div>
-            </td>
-        </tr>
+        @foreach (var producto in ListaDeProductos)
+        {
+            <tr>
+                <td class="col">@producto.Descripcion</td>
+                <td class="col-2">@producto.Precio.ToString("N2")</td>
+                <td class="col-2">@producto.Cantidad lb</td>
+                <td class="col-2">@producto.SubTotal</td>
+                <td>
+                    <div class="btn-group">
+                        <button class="btn btn-outline-warning">
+                            <i class="oi oi-pencil"></i>
+                        </button>
+                        <button class="btn btn-outline-danger">
+                            <i class="oi oi-trash"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 @code {
-    public List<Producto> Productos {get; set;}
+    public List<Producto> ListaDeProductos { get; set; } = new List<Producto>()
+    {
+        new Producto(){Descripcion = "Habichuela",  Cantidad = 7, Precio = 50},
+        new Producto(){Descripcion = "Habichuela 1", Cantidad = 14, Precio = 60},
+        new Producto(){Descripcion = "Habichuela 2", Cantidad = 13, Precio = 70},
+        new Producto(){Descripcion = "Habichuela 3", Cantidad = 1, Precio = 150},
+        new Producto(){Descripcion = "Habichuela 4", Cantidad = 11, Precio = 250},
+        new Producto(){Descripcion = "Habichuela 5", Cantidad = 11, Precio = 450},
+        new Producto(){Descripcion = "Habichuela 6", Cantidad = 16, Precio = 550},
+    };
 }
